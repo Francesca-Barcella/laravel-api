@@ -16,6 +16,7 @@ class ProjectController extends Controller
             'success' => 'true',
             //'results' => Project::orderByDesc('id')->paginate(5)
             //aggiungo il metodo with() per correlare anche type e technologies
+            //i nomi sono gli stessi che ho dato ai rispettivi metodi all'interno del model project.php quando ho definito le relazioni)
             'results' => Project::with('type', 'technologies')->orderByDesc('id')->paginate(5)
         ]);
 
