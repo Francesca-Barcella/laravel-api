@@ -89,9 +89,11 @@
 
         <tfoot>
         </tfoot>
-
     </table>
 
+    <!-- PREV & NEXT BUTTON -->
+    {{$projects->links('vendor.pagination.bootstrap-5')}}
+   
     <a name="" id="" class="btn btn-primary position-fixed bottom-0 end-0 m-3" href="{{route ('admin.projects.create')}}" role="button">Add New Project</a>
 </div>
 
