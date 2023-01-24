@@ -11,6 +11,8 @@
 <div class="table-responsive">
 
     <h1 class="my-3">My Projects</h1>
+    <a name="" id="" class="btn btn-primary my-3" href="{{route ('admin.projects.create')}}" role="button">Add New Project</a>
+
     <table class="table table-striped
     table-hover	
     table-borderless
@@ -94,7 +96,6 @@
     <!-- PREV & NEXT BUTTON -->
     {{$projects->links('vendor.pagination.bootstrap-5')}}
    
-    <a name="" id="" class="btn btn-primary position-fixed bottom-0 end-0 m-3" href="{{route ('admin.projects.create')}}" role="button">Add New Project</a>
 </div>
 
 
