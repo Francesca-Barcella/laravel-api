@@ -17,7 +17,7 @@ class ProjectController extends Controller
             //'results' => Project::orderByDesc('id')->paginate(5)
             //aggiungo il metodo with() per correlare anche type e technologies
             //i nomi sono gli stessi che ho dato ai rispettivi metodi all'interno del model project.php quando ho definito le relazioni)
-            'results' => Project::with('type', 'technologies')->orderByDesc('id')->paginate(5)
+            'results' => Project::with('type', 'technologies')->orderByDesc('id')->paginate(6)
         ]);
 
         //SINTAX INDEX 2
@@ -25,5 +25,24 @@ class ProjectController extends Controller
 
         //SINTAX INDEX 2 + paginate
         //return Project::orderByDesc('id')->paginate(5);
+    }
+
+    public function show($slug)
+    {
+        //dd($slug);
+        $project = Project::with('type', 'technologies')->where('slug', $slug)->first();
+        //dd($project);
+        /* BUG DA FIXAR SICURO PERCHE' NON FUNZIONA IL DD - MI DA RISULTATO NULL */
+        if ($project){
+            return response()->json([
+                'success' => true,
+                'project' => $project
+            ]);
+        } else {
+            return response()->json([
+                'success' => false,
+                'project' => 'Project Not Found'
+            ]);
+        }
     }
 }
