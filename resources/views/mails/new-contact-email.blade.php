@@ -3,7 +3,7 @@
     Hai un nuovo messaggio <br>
 
     Nome:{{$lead->name}}<br>
-    Nome:{{$lead->mail}}<br>
+    Nome:{{$lead->email}}<br>
     Nome:{{$lead->message}}<br>
 
 

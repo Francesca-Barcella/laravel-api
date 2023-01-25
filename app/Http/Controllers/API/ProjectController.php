@@ -29,10 +29,7 @@ class ProjectController extends Controller
 
     public function show($slug)
     {
-        /****************************************************************************************  
-        PROBLEMA!!!!
-        BUG DA FIXAR CON LA CHIAMATA SICURO PERCHE' NON FUNZIONA IL DD - MI DA RISULTATO NULL 
-        ****************************************************************************************/
+
         //dd($slug);
         $project = Project::with('type', 'technologies')->where('slug', $slug)->first();
         //dd($project);

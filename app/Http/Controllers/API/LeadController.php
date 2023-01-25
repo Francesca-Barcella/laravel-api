@@ -18,11 +18,11 @@ class LeadController extends Controller
         $validator = Validator::make($data, [
             'name'=> 'required',
             'email' => 'required|email',
-            'massage' => 'required'
+            'message' => 'required'
         ]);
 
         if ($validator->fails()){
-            return response()->jason([
+            return response()->json([
                 'success' => false,
                 'errors' => $validator->errors()
             ]);
